@@ -192,15 +192,24 @@ const showPrevPage = () => {
   pageNum--;
   queueRenderPage(pageNum);
 };
+//subscribe
 
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
 // Show Next Page
 const showNextPage = () => {
   if (pageNum >= pdfDoc.numPages) {
     return;
   }
-  if(pageNum >= 5){
-    alert("You need to Subscribe");
-  }else{
+  if (pageNum >= 5){
+    openNav();
+  }
+  else{
     pageNum++;
   queueRenderPage(pageNum);
   }
